@@ -1,0 +1,21 @@
+filename,raw_output_first_50_chars,is_valid_json,has_all_required_keys,key_accuracy,value_accuracy,notes
+Doc-01,"{""vendor"":""Ironbridge Engineering Ltd"",",True,True,1.0,1.0,Perfect; date normalized to ISO; all floats correct
+Doc-02,"{""vendor"":""Versailles Garden Design"",",True,True,1.0,1.0,Perfect; date normalized; null fields correct
+Doc-03,"{""buyer"":""Redwood Supermarkets Corp"",",True,True,1.0,1.0,Perfect PO extraction
+Doc-04,"{""vendor"":""Camden Photography Studio"",",True,True,1.0,1.0,Keys now correct; date ISO; null fields handled
+Doc-05,"{""vendor"":""Sunrise Auto Components"",",True,True,1.0,1.0,Dates normalized; floats not strings; perfect
+Doc-06,"{""buyer"":""Ashford Records Label"",",True,True,1.0,1.0,Perfect; delivery_date null correct
+Doc-07,"{""vendor"":""Alpine Sports GmbH"",",True,True,1.0,1.0,Perfect multi-item; no prose preamble
+Doc-08,"{""buyer"":""Maharashtra State Road Dept"",",True,True,1.0,1.0,Perfect large-value INR PO
+Doc-09,"{""vendor"":""BlueSky Drone Services"",",True,True,1.0,1.0,Both null fields correct; no markdown fence
+Doc-10,"{""buyer"":""Bordeaux Winery Estate"",",True,True,1.0,1.0,Perfect; delivery_date null correct
+Doc-11,"{""vendor"":""Yokohama Electronics Ltd"",",True,True,1.0,1.0,JPY dates normalized; floats correct
+Doc-12,"{""buyer"":""Valley Farm Supply"",",True,True,1.0,1.0,Perfect 5-item PO
+Doc-13,"{""vendor"":""Pinnacle Event Management"",",True,True,1.0,1.0,Previously pure prose; now clean JSON
+Doc-14,"{""buyer"":""Thames Water Authority"",",True,True,1.0,1.0,Perfect PO
+Doc-15,"{""vendor"":""Maison du Mobilier SA"",",True,True,1.0,1.0,Missing subtotal in source inferred correctly
+Doc-16,"{""vendor"":""Delta Pharmacare"",",True,True,1.0,1.0,Previously markdown-wrapped; now bare JSON
+Doc-17,"{""buyer"":""AlphaStream Telecom Inc"",",True,True,1.0,1.0,Perfect single-item PO
+Doc-18,"{""vendor"":""Clearwater Plumbing Services"",",True,True,1.0,1.0,Date DD-MM normalized to ISO
+Doc-19,"{""buyer"":""Eurostore Retail NV"",",True,True,1.0,1.0,Perfect 4-item PO
+Doc-20,"{""vendor"":""Summit Software Consultants"",",True,False,0.89,0.8,Missing subtotal key (doc has no subtotal line); otherwise correct
