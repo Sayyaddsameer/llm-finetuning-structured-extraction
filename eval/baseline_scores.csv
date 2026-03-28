@@ -1,0 +1,21 @@
+filename,raw_output_first_50_chars,is_valid_json,has_all_required_keys,key_accuracy,value_accuracy,notes
+Doc-01,"Here is the extracted data from the invoice:",False,False,0.0,0.0,Prose preamble + markdown fence; floats are strings; date not ISO
+Doc-02,"{  ""vendor"": ""Versailles Garden Design"",",True,True,1.0,0.85,Clean JSON; date not ISO (03-10-2024 instead of 2024-10-03)
+Doc-03,"I've extracted the purchase order details:",False,False,0.0,0.0,Prose preamble before JSON makes json.loads fail
+Doc-04,"{""vendor"":""Camden Photography Studio"",",True,False,0.56,0.4,Valid JSON but wrong key names: invoice_no/items/desc/qty/price
+Doc-05,"Here is the data extracted from the invoice in j",False,False,0.0,0.0,Markdown code fence wrapping makes json.loads fail; dates not ISO
+Doc-06,"{  ""buyer"": ""Ashford Records Label"",",True,True,1.0,1.0,Perfect output; all keys correct; delivery_date null correct
+Doc-07,"Sure! Here are the extracted fields:",False,False,0.0,0.0,Prose preamble makes json.loads fail despite correct JSON body
+Doc-08,"{  ""buyer"": ""Maharashtra State Road Dept"",",True,True,1.0,1.0,Perfect PO extraction
+Doc-09,"I'll extract the invoice fields for you:",False,False,0.0,0.0,Prose preamble + wrong key names (Vendor/Invoice Number/Line Items)
+Doc-10,"{  ""buyer"": ""Bordeaux Winery Estate"",",True,True,1.0,1.0,Perfect PO extraction
+Doc-11,"Here's the extracted invoice data:",False,False,0.0,0.0,Prose prefix; integers not floats for JPY amounts; date not ISO
+Doc-12,"{  ""buyer"": ""Valley Farm Supply"",",True,True,1.0,1.0,Perfect 5-item PO extraction
+Doc-13,"Based on the invoice provided, here are the ext",False,False,0.0,0.0,Pure prose response; no JSON at all
+Doc-14,"{  ""buyer"": ""Thames Water Authority"",",True,True,1.0,1.0,Perfect PO extraction
+Doc-15,"{  ""vendor"": ""Maison du Mobilier SA"",",True,True,1.0,0.9,Clean JSON; subtotal inferred correctly as 11360 (no subtotal in doc)
+Doc-16,"```json",False,False,0.0,0.0,Markdown code fence; content is otherwise correct
+Doc-17,"{  ""buyer"": ""AlphaStream Telecom Inc"",",True,True,1.0,1.0,Perfect single-item PO
+Doc-18,"{  ""vendor"": ""Clearwater Plumbing Services"",",True,True,1.0,0.9,Clean JSON; date formatted as DD-MM-YYYY not ISO
+Doc-19,"{  ""buyer"": ""Eurostore Retail NV"",",True,True,1.0,1.0,Perfect 4-item PO
+Doc-20,"I can extract the following information from thi",False,False,0.0,0.0,Prose preamble; date not reformatted to ISO (Nov 30 2024)
